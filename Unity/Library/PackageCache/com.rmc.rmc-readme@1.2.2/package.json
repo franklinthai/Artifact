@@ -1,0 +1,28 @@
+{
+  "name": "com.rmc.rmc-readme",
+  "displayName": "RMC ReadMe",
+  "version": "1.2.2",
+  "unity": "2021.3",
+  "description": "ReadMe library for Unity Development by Rivello Multimedia Consulting",
+  "keywords": [
+    "unity",
+    "unity3d",
+    "upm",
+    "readme",
+    "documentation",
+    "utility"
+  ],
+  "homepage": "https://github.com/SamuelAsherRivello/rmc-readme.git",
+  "bugs": {
+     "url": "https://github.com/SamuelAsherRivello/rmc-readme/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/SamuelAsherRivello/rmc-readme.git"
+  },
+  "license": "MIT",
+  "author": "RMC (github.com/SamuelAsherRivello)",
+  "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
