@@ -1,4 +1,6 @@
 /Unity/Library/
+/Unity/Temp/
+/Unity/Logs/
 
 .vscode
-/Unity/Temp/
+*.csproj
