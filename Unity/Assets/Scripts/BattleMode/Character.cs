@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    public string characterName;
+    public string charName;
     public int maxHp;
     public int curHp;
     
