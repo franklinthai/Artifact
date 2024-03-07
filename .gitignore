@@ -1,7 +1,7 @@
 /Unity/Library/
 /Unity/Temp/
 /Unity/Logs/
-/Unity/UserSettings/
+/Unity/UserSettings/*
 
 .vscode
 *.csproj
