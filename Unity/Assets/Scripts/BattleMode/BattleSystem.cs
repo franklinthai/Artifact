@@ -7,34 +7,45 @@ public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 
 public class BattleSystem : MonoBehaviour
 {
+
+	public GameObject playerObj;
+	public GameObject enemyObj;
+
+	public Transform playerBattleStation;
+	public Transform enemyBattleStation;
+
     public Text dialogueText;
 
-    Character player;
-	Character enemy;
+    public Character playerChar;
+	public Character enemyChar;
+	
+	public BattleHUD playerHUD;
+	public BattleHUD enemyHUD;
+
     public BattleState state;
 
-    void Start()
+    public void Start()
     {
 		state = BattleState.START;
-		// StartCoroutine(SetupBattle());
+		StartCoroutine(SetupBattle());
     }
 
-    // IEnumerator SetupBattle()
-	// {
-	// 	GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
-	// 	playerUnit = playerGO.GetComponent<Unit>();
+    public IEnumerator SetupBattle()
+	{
+		GameObject playerGO = Instantiate(playerObj, playerBattleStation);
+		playerChar = playerGO.GetComponent<Character>();
 
-	// 	GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
-	// 	enemyUnit = enemyGO.GetComponent<Unit>();
+		GameObject enemyGO = Instantiate(enemyObj, enemyBattleStation);
+		enemyChar = enemyGO.GetComponent<Character>();
 
-	// 	dialogueText.text = "A wild " + enemyUnit.unitName + " approaches...";
+		dialogueText.text = "A wild " + enemyChar.charName + " approaches...";
 
-	// 	playerHUD.SetHUD(playerUnit);
-	// 	enemyHUD.SetHUD(enemyUnit);
+		playerHUD.SetHUD(playerChar);
+		enemyHUD.SetHUD(enemyChar);
 
-	// 	yield return new WaitForSeconds(2f);
+		yield return new WaitForSeconds(2f);
 
-	// 	state = BattleState.PLAYERTURN;
-	// 	PlayerTurn();
-	// }
+		state = BattleState.PLAYERTURN;
+		// PlayerTurn();
+	}
 }
