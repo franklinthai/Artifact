@@ -8,6 +8,8 @@ public class Character : MonoBehaviour
     public int maxHp;
     public int curHp;
     
+    public int damage;
+    
     // Returns true if char dead, false otherwise
     public bool TakeDamage(int dmg)
 	{
