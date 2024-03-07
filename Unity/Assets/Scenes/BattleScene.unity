@@ -1608,9 +1608,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1290496118}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f36616fc90507ed419289ae37266212f, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d151cd40595f41d49941781ac1b88fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nameText: {fileID: 2101677546}
+  hpSlider: {fileID: 1589395327}
 --- !u!1 &1452366401
 GameObject:
   m_ObjectHideFlags: 0
@@ -2173,9 +2175,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1714929642}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ace5d3b76e8bbd94d8faa070310b062d, type: 3}
+  m_Script: {fileID: 11500000, guid: eaa03d3a944954198a3c14905d43d90e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerObj: {fileID: 1977929187}
+  enemyObj: {fileID: 1977929187}
+  playerBattleStation: {fileID: 776899475}
+  enemyBattleStation: {fileID: 1466009198}
+  dialogueText: {fileID: 0}
+  playerChar: {fileID: 0}
+  enemyChar: {fileID: 0}
+  playerHUD: {fileID: 1727677075}
+  enemyHUD: {fileID: 1290496122}
+  state: 0
 --- !u!4 &1714929644
 Transform:
   m_ObjectHideFlags: 0
@@ -2276,9 +2288,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1727677073}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f36616fc90507ed419289ae37266212f, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d151cd40595f41d49941781ac1b88fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nameText: {fileID: 1166149988}
+  hpSlider: {fileID: 1142284058}
 --- !u!114 &1727677076
 MonoBehaviour:
   m_ObjectHideFlags: 0
