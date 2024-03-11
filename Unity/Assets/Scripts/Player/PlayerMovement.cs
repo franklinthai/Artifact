@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnApplicationQuit()
     {
+        Debug.Log("end game reset playerpos");
         PlayerPrefs.DeleteKey("PlayerPosX");
         PlayerPrefs.DeleteKey("PlayerPosY");
         PlayerPrefs.DeleteKey("PlayerPosZ");
@@ -40,7 +41,13 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 move = transform.right * x + transform.forward * z;
         controller.Move(move * speed * Time.deltaTime);
-        // SaveCharacterPosition(controller.transform.position);
-    }
 
+        if (PlayerPrefs.HasKey("PlayerPosX")) {
+            Transform character = GameObject.FindGameObjectWithTag("Player").transform;
+            float playerPosX = PlayerPrefs.GetFloat("PlayerPosX");
+            float playerPosY = PlayerPrefs.GetFloat("PlayerPosY");
+            float playerPosZ = PlayerPrefs.GetFloat("PlayerPosZ");
+            character.position = new Vector3(playerPosX, playerPosY, playerPosZ);
+        }
+    }
 }

@@ -25,12 +25,11 @@ public class BattleSystem : MonoBehaviour
     public BattleHUD enemyHUD;
 
     public BattleState state;
-    public Button attackMove1Button;
+
+	public Button attackMove1Button;
     public Button attackMove2Button;
     public Button attackMove3Button;
     public Button healButton;
-
-
     public void Start()
 	{
         state = BattleState.START;
@@ -54,6 +53,14 @@ public class BattleSystem : MonoBehaviour
 
         state = BattleState.PLAYERTURN;
         PlayerTurn();
+    }
+
+	void OnApplicationQuit()
+    {
+        Debug.Log("end game reset playerpos");
+        PlayerPrefs.DeleteKey("PlayerPosX");
+        PlayerPrefs.DeleteKey("PlayerPosY");
+        PlayerPrefs.DeleteKey("PlayerPosZ");
     }
 
     void PlayerTurn()

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class RandomInteractable : MonoBehaviour, IInteractable
+public class RandoInteractable : MonoBehaviour, IInteractable
 {
     // This method is called when the GameObject is interacted with
     public string sceneName;
