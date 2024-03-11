@@ -14,7 +14,7 @@ public class PlayAgain : MonoBehaviour
         PlayerPrefs.DeleteKey("PlayerPosX");
         PlayerPrefs.DeleteKey("PlayerPosY");
         PlayerPrefs.DeleteKey("PlayerPosZ");
-
+        PlayerPrefs.DeleteKey("level");
         // Load the scene
         SceneManager.LoadScene(sceneName);
     }
