@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
+
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 
 public class BattleSystem : MonoBehaviour
@@ -23,6 +25,11 @@ public class BattleSystem : MonoBehaviour
     public BattleHUD enemyHUD;
 
     public BattleState state;
+    public Button attackMove1Button;
+    public Button attackMove2Button;
+    public Button attackMove3Button;
+    public Button healButton;
+
 
     public void Start()
 	{

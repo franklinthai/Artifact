@@ -377,8 +377,8 @@ MonoBehaviour:
   curHp: 100
   damage: 0
   attackMove1Damage: 40
-  attackMove2Damage: 1000
-  attackMove3Damage: 10
+  attackMove2Damage: 10
+  attackMove3Damage: 1000
 --- !u!1 &147059765
 GameObject:
   m_ObjectHideFlags: 0
@@ -2719,6 +2719,10 @@ MonoBehaviour:
   playerHUD: {fileID: 1727677075}
   enemyHUD: {fileID: 1290496122}
   state: 0
+  attackMove1Button: {fileID: 1648434818}
+  attackMove2Button: {fileID: 1366197956}
+  attackMove3Button: {fileID: 1686528655}
+  healButton: {fileID: 147059767}
 --- !u!4 &1714929644
 Transform:
   m_ObjectHideFlags: 0
@@ -3266,9 +3270,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charName: James
-  maxHp: 100
-  curHp: 100
-  damage: 20
+  maxHp: 1000
+  curHp: 1000
+  damage: 100
   attackMove1Damage: 10
   attackMove2Damage: 10
   attackMove3Damage: 10
