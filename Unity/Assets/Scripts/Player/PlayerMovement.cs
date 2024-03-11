@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
         PlayerPrefs.DeleteKey("PlayerPosX");
         PlayerPrefs.DeleteKey("PlayerPosY");
         PlayerPrefs.DeleteKey("PlayerPosZ");
+        PlayerPrefs.DeleteKey("level");
     }
 
     // Update is called once per frame

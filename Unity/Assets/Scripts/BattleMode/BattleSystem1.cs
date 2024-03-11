@@ -31,6 +31,7 @@ public class BattleSystem1 : MonoBehaviour
     public void Start()
 	{
         state = BattleState.START;
+		button.gameObject.SetActive(false);
         StartCoroutine(SetupBattle());
     }
 
@@ -58,7 +59,6 @@ public class BattleSystem1 : MonoBehaviour
         PlayerPrefs.DeleteKey("PlayerPosX");
         PlayerPrefs.DeleteKey("PlayerPosY");
         PlayerPrefs.DeleteKey("PlayerPosZ");
-        PlayerPrefs.DeleteKey("level");
     }
 
     void PlayerTurn()
@@ -128,7 +128,6 @@ public class BattleSystem1 : MonoBehaviour
 
 	public void OnHealButton()
 	{
-		Debug.Log("TEST");
 		if (state != BattleState.PLAYERTURN)
 			return;
 
@@ -209,6 +208,7 @@ public class BattleSystem1 : MonoBehaviour
         else if (state == BattleState.LOST)
         {
             dialogueText.text = "You were defeated.";
+			button.gameObject.SetActive(true);
         }
     }
 }
