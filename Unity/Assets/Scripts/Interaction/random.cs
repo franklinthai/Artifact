@@ -1,12 +1,17 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RandomInteractable : MonoBehaviour, IInteractable
 {
     // This method is called when the GameObject is interacted with
+    public string sceneName;
     public void Interact()
     {
-        // Generate and log a random number
-        int randomNumber = Random.Range(0, 100);
-        Debug.Log("Random number: " + randomNumber);
+        sceneName = "BattleScene";
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        // Load the scene
+        SceneManager.LoadScene(sceneName);
     }
 }
