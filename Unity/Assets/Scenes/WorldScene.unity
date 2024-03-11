@@ -1635,7 +1635,7 @@ GameObject:
   - component: {fileID: 757708158}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4442,6 +4442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49a61328e61954977a6a30bfa68fa069, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneName: 
 --- !u!135 &1450442827
 SphereCollider:
   m_ObjectHideFlags: 0
