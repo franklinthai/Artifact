@@ -5,10 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 
-
-public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
-
-public class BattleSystem : MonoBehaviour
+public class BattleSystem3 : MonoBehaviour
 {
     public GameObject playerObj;
     public GameObject enemyObj;
@@ -105,7 +102,7 @@ public class BattleSystem : MonoBehaviour
 				break;
 			case 2:
 				isDead = playerChar.AttackMove2(enemyChar); // Player performs Attack Move 2 on enemy
-				dialogueText.text = "That scared James";
+				dialogueText.text = "That scared " + enemyChar.charName;
 				break;
 			case 3:
 				isDead = playerChar.AttackMove3(enemyChar); // Player performs Attack Move 3 on enemy
