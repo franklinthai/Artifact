@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
 
     public CharacterController controller;
     public float speed = 12f;
-
+    private int skip = 2;
 
     // Start is called before the first frame update
     void Start()
@@ -36,18 +36,14 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+        if (skip == 0) {
+            float x = Input.GetAxis("Horizontal");
+            float z = Input.GetAxis("Vertical");
 
-        Vector3 move = transform.right * x + transform.forward * z;
-        controller.Move(move * speed * Time.deltaTime);
-
-        if (PlayerPrefs.HasKey("PlayerPosX")) {
-            Transform character = GameObject.FindGameObjectWithTag("Player").transform;
-            float playerPosX = PlayerPrefs.GetFloat("PlayerPosX");
-            float playerPosY = PlayerPrefs.GetFloat("PlayerPosY");
-            float playerPosZ = PlayerPrefs.GetFloat("PlayerPosZ");
-            character.position = new Vector3(playerPosX, playerPosY, playerPosZ);
+            Vector3 move = transform.right * x + transform.forward * z;
+            controller.Move(move * speed * Time.deltaTime);
+        } else {
+            skip--;
         }
     }
 }
