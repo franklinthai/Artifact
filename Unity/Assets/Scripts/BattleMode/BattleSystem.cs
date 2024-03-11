@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 
 public class BattleSystem : MonoBehaviour
@@ -22,6 +24,11 @@ public class BattleSystem : MonoBehaviour
     public BattleHUD enemyHUD;
 
     public BattleState state;
+    public Button attackMove1Button;
+    public Button attackMove2Button;
+    public Button attackMove3Button;
+    public Button healButton;
+
 
     public void Start()
     {
@@ -125,7 +132,7 @@ IEnumerator PlayerAttackMove(int moveNumber)
         playerChar.Heal(20);
 
         playerHUD.SetHP(playerChar.curHp);
-        dialogueText.text = "Mmmmm nice healing!";
+        dialogueText.text = "Mmmmm nice that hit the spot!";
 
         yield return new WaitForSeconds(2f);
 
@@ -146,7 +153,7 @@ IEnumerator EnemyTurn()
     if (willHeal)
     {
         // Perform healing; you can adjust the heal amount as needed
-        enemyChar.Heal(20);
+        enemyChar.Heal(60);
         enemyHUD.SetHP(enemyChar.curHp);
         dialogueText.text = $"{enemyChar.charName} eats a taco!";
 
