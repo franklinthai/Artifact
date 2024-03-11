@@ -50,7 +50,7 @@ public class BattleSystem : MonoBehaviour
 
     void PlayerTurn()
     {
-        dialogueText.text = "Choose an action: \n1. Attack Move 1\n2. Attack Move 2\n3. Attack Move 3\n4. Heal";
+        dialogueText.text = "Its time to fight! Pick a Move";
     }
 
     public void OnAttackMove1Button()
@@ -84,15 +84,15 @@ IEnumerator PlayerAttackMove(int moveNumber)
     {
         case 1:
             isDead = playerChar.AttackMove1(enemyChar); // Player performs Attack Move 1 on enemy
-            dialogueText.text = "Attack Move 1 is successful!";
+            dialogueText.text = "Ouch hit him in the balls";
             break;
         case 2:
             isDead = playerChar.AttackMove2(enemyChar); // Player performs Attack Move 2 on enemy
-            dialogueText.text = "Attack Move 2 hits hard!";
+            dialogueText.text = "That scared James";
             break;
         case 3:
             isDead = playerChar.AttackMove3(enemyChar); // Player performs Attack Move 3 on enemy
-            dialogueText.text = "Attack Move 3 strikes!";
+            dialogueText.text = "Well there goes his eardrums";
             break;
     }
 
@@ -125,7 +125,7 @@ IEnumerator PlayerAttackMove(int moveNumber)
         playerChar.Heal(20);
 
         playerHUD.SetHP(playerChar.curHp);
-        dialogueText.text = "You feel renewed strength!";
+        dialogueText.text = "Mmmmm nice healing!";
 
         yield return new WaitForSeconds(2f);
 
@@ -133,14 +133,33 @@ IEnumerator PlayerAttackMove(int moveNumber)
         StartCoroutine(EnemyTurn());
     }
 
-    IEnumerator EnemyTurn()
+IEnumerator EnemyTurn()
+{
+    bool willHeal = false;
+    // Example condition: Enemy decides to heal if its current health is below 50% of its max health
+    if (enemyChar.curHp < enemyChar.maxHp * 0.5f)
     {
-        dialogueText.text = enemyChar.charName + " attacks!";
+        // Let's say there's a 50% chance to heal if below 50% health, adjust as needed
+        willHeal = Random.Range(0, 2) == 0;
+    }
+
+    if (willHeal)
+    {
+        // Perform healing; you can adjust the heal amount as needed
+        enemyChar.Heal(20);
+        enemyHUD.SetHP(enemyChar.curHp);
+        dialogueText.text = $"{enemyChar.charName} eats a taco!";
+
+        yield return new WaitForSeconds(2f);
+    }
+    else
+    {
+        // Perform attack
+        dialogueText.text = $"{enemyChar.charName} punches!";
 
         yield return new WaitForSeconds(1f);
 
         bool isDead = playerChar.TakeDamage(enemyChar.damage);
-
         playerHUD.SetHP(playerChar.curHp);
 
         yield return new WaitForSeconds(1f);
@@ -149,19 +168,21 @@ IEnumerator PlayerAttackMove(int moveNumber)
         {
             state = BattleState.LOST;
             EndBattle();
-        }
-        else
-        {
-            state = BattleState.PLAYERTURN;
-            PlayerTurn();
+            yield break; // Exit the coroutine if the game ends
         }
     }
+
+    // Transition back to the player's turn regardless of the enemy's action
+    state = BattleState.PLAYERTURN;
+    PlayerTurn();
+}
+
 
     void EndBattle()
     {
         if (state == BattleState.WON)
         {
-            dialogueText.text = "You won the battle!";
+            dialogueText.text = "You won the battle! Lets go!";
         }
         else if (state == BattleState.LOST)
         {
