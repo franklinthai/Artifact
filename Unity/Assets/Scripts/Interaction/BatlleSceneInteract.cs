@@ -7,7 +7,7 @@ public class RandomInteractable : MonoBehaviour, IInteractable
     public string sceneName;
     public void Interact()
     {
-        sceneName = "BattleScene";
+        sceneName = "BattleScene1";
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
