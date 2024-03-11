@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public CharacterController controller;
+    public int level;
     public float speed = 12f;
     private int skip = 2;
 
@@ -14,20 +15,16 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         if (PlayerPrefs.HasKey("PlayerPosX")) {
-            Debug.Log(PlayerPrefs.GetFloat("PlayerPosX"));
             float playerPosX = PlayerPrefs.GetFloat("PlayerPosX");
             float playerPosY = PlayerPrefs.GetFloat("PlayerPosY");
             float playerPosZ = PlayerPrefs.GetFloat("PlayerPosZ");
             Transform character = GameObject.FindGameObjectWithTag("Player").transform;
             character.position = new Vector3(playerPosX, playerPosY, playerPosZ);
-            Debug.Log("Player pos" + character.position);
-            Debug.Log("load pos ");
         }
     }
 
     void OnApplicationQuit()
     {
-        Debug.Log("end game reset playerpos");
         PlayerPrefs.DeleteKey("PlayerPosX");
         PlayerPrefs.DeleteKey("PlayerPosY");
         PlayerPrefs.DeleteKey("PlayerPosZ");

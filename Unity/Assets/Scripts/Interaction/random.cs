@@ -6,9 +6,13 @@ public class RandoInteractable : MonoBehaviour, IInteractable
     // This method is called when the GameObject is interacted with
     public string sceneName;
     private Transform characterTransform;
+    public GameObject playerObj;
+    public PlayerMovement player;
+
     void Start()
     {
         characterTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        player = playerObj.GetComponent<PlayerMovement>();
     }
 
     public void Interact()
@@ -16,7 +20,7 @@ public class RandoInteractable : MonoBehaviour, IInteractable
         // code to save position in world scene
         SaveCharacterPosition(characterTransform.position);
 
-        sceneName = "BattleScene";
+        sceneName = "BattleScene" + player.level;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
