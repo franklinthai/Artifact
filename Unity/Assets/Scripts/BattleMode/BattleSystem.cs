@@ -24,6 +24,8 @@ public class BattleSystem : MonoBehaviour
     public BattleHUD playerHUD;
     public BattleHUD enemyHUD;
 
+    public GameObject button;
+
     public BattleState state;
     public Button attackMove1Button;
     public Button attackMove2Button;
