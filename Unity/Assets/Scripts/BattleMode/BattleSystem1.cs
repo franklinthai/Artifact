@@ -58,6 +58,7 @@ public class BattleSystem1 : MonoBehaviour
         PlayerPrefs.DeleteKey("PlayerPosX");
         PlayerPrefs.DeleteKey("PlayerPosY");
         PlayerPrefs.DeleteKey("PlayerPosZ");
+        PlayerPrefs.DeleteKey("level");
     }
 
     void PlayerTurn()

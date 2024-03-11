@@ -61,6 +61,7 @@ public class BattleSystem2 : MonoBehaviour
         PlayerPrefs.DeleteKey("PlayerPosX");
         PlayerPrefs.DeleteKey("PlayerPosY");
         PlayerPrefs.DeleteKey("PlayerPosZ");
+		PlayerPrefs.DeleteKey("level");
     }
 
     void PlayerTurn()
@@ -208,7 +209,7 @@ public class BattleSystem2 : MonoBehaviour
         }
         else if (state == BattleState.LOST)
         {
-            dialogueText.text = "You were defeated.";
+            dialogueText.text = "L Bozo.";
             button.gameObject.SetActive(true);
         }
     }
