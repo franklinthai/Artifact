@@ -63,6 +63,7 @@ public class BattleSystem1 : MonoBehaviour
     void PlayerTurn()
     {
         dialogueText.text = "Its time to fight! Pick a Move";
+
     }
 
     public void OnAttackMove1Button()
@@ -104,7 +105,7 @@ public class BattleSystem1 : MonoBehaviour
 				break;
 			case 3:
 				isDead = playerChar.AttackMove3(enemyChar); // Player performs Attack Move 3 on enemy
-				dialogueText.text = "Well there goes his eardrums";
+				dialogueText.text = "Reminded Evan of forgotten CS hw, it's super effective";
 				break;
 		}
 
@@ -124,26 +125,27 @@ public class BattleSystem1 : MonoBehaviour
 		}
 	}
 
-		public void OnHealButton()
-		{
-			if (state != BattleState.PLAYERTURN)
-				return;
+	public void OnHealButton()
+	{
+		Debug.Log("TEST");
+		if (state != BattleState.PLAYERTURN)
+			return;
 
-			StartCoroutine(PlayerHeal());
-		}
+		StartCoroutine(PlayerHeal());
+	}
 
-		IEnumerator PlayerHeal()
-		{
-			playerChar.Heal(20);
+	IEnumerator PlayerHeal()
+	{
+		playerChar.Heal(20);
 
-			playerHUD.SetHP(playerChar.curHp);
-			dialogueText.text = "Mmmmm nice healing!";
+		playerHUD.SetHP(playerChar.curHp);
+		dialogueText.text = "Mmmmm nice healing!";
 
-			yield return new WaitForSeconds(2f);
+		yield return new WaitForSeconds(2f);
 
-			state = BattleState.ENEMYTURN;
-			StartCoroutine(EnemyTurn());
-		}
+		state = BattleState.ENEMYTURN;
+		StartCoroutine(EnemyTurn());
+	}
 
 	IEnumerator EnemyTurn()
 	{
@@ -160,14 +162,14 @@ public class BattleSystem1 : MonoBehaviour
 			// Perform healing; you can adjust the heal amount as needed
 			enemyChar.Heal(20);
 			enemyHUD.SetHP(enemyChar.curHp);
-			dialogueText.text = $"{enemyChar.charName} eats a taco!";
+			dialogueText.text = $"{enemyChar.charName} eats more of Franklin's pizza!";
 
 			yield return new WaitForSeconds(2f);
 		}
 		else
 		{
 			// Perform attack
-			dialogueText.text = $"{enemyChar.charName} punches!";
+			dialogueText.text = $"{enemyChar.charName} does a flying side kick!";
 
 			yield return new WaitForSeconds(1f);
 

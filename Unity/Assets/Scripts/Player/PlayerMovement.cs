@@ -7,7 +7,6 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public CharacterController controller;
-    public int level;
     public float speed = 12f;
     private int skip = 2;
 

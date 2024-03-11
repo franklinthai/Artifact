@@ -7,12 +7,16 @@ public class RandoInteractable : MonoBehaviour, IInteractable
     public string sceneName;
     private Transform characterTransform;
     public GameObject playerObj;
-    public PlayerMovement player;
+
+    private int level;
 
     void Start()
     {
         characterTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        player = playerObj.GetComponent<PlayerMovement>();
+        if (!PlayerPrefs.HasKey("level")) {
+            PlayerPrefs.SetInt("level", 1);
+        }
+        level = PlayerPrefs.GetInt("level");
     }
 
     public void Interact()
@@ -20,7 +24,7 @@ public class RandoInteractable : MonoBehaviour, IInteractable
         // code to save position in world scene
         SaveCharacterPosition(characterTransform.position);
 
-        sceneName = "BattleScene" + player.level;
+        sceneName = "BattleScene" + level;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
@@ -33,8 +37,7 @@ public class RandoInteractable : MonoBehaviour, IInteractable
         PlayerPrefs.SetFloat("PlayerPosX", position.x);
         PlayerPrefs.SetFloat("PlayerPosY", position.y);
         PlayerPrefs.SetFloat("PlayerPosZ", position.z);
-        Debug.Log("save position");
-        Debug.Log(PlayerPrefs.GetFloat("PlayerPosX"));
+        PlayerPrefs.SetInt("level", level + 1);
         PlayerPrefs.Save();
     }
 }

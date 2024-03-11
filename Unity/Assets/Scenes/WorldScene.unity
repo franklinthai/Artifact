@@ -2346,7 +2346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 757708157}
-  level: 3
+  level: 1
   speed: 12
 --- !u!1001 &765552180
 PrefabInstance:
