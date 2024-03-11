@@ -32,6 +32,7 @@ public class BattleSystem3 : MonoBehaviour
     public void Start()
 	{
         state = BattleState.START;
+		button.gameObject.SetActive(false);
         StartCoroutine(SetupBattle());
     }
 
@@ -56,10 +57,10 @@ public class BattleSystem3 : MonoBehaviour
 
 	void OnApplicationQuit()
     {
-        Debug.Log("end game reset playerpos");
         PlayerPrefs.DeleteKey("PlayerPosX");
         PlayerPrefs.DeleteKey("PlayerPosY");
         PlayerPrefs.DeleteKey("PlayerPosZ");
+		PlayerPrefs.DeleteKey("level");
     }
 
     void PlayerTurn()
@@ -208,6 +209,7 @@ public class BattleSystem3 : MonoBehaviour
         else if (state == BattleState.LOST)
         {
             dialogueText.text = "You were defeated.";
+			button.gameObject.SetActive(true);
         }
     }
 }
