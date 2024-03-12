@@ -33,6 +33,7 @@ public class BattleSystem3 : MonoBehaviour
 	{
         state = BattleState.START;
 		StartCoroutine(SetupBattle());
+
 		button.gameObject.SetActive(false);
     }
 
