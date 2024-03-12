@@ -17,6 +17,7 @@ public class RandoInteractable : MonoBehaviour, IInteractable
             PlayerPrefs.SetInt("level", 1);
         }
         level = PlayerPrefs.GetInt("level");
+        Debug.Log(level);
     }
 
     public void Interact()

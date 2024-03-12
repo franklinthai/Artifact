@@ -1,40 +1,42 @@
 ﻿<Properties StartupConfiguration="{CD8C9303-404B-FB8D-6B9B-21988D5CAC0A}|">
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d9ca73bc-7777-4454-ba6b-8474d2b57f84" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Interaction/random.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BattleMode/BattleSystem2.cs">
     <Files>
-      <File FileName="Assets/Scripts/BattleMode/PlayAgain.cs" />
-      <File FileName="Assets/Scripts/BattleMode/BattleSystem1.cs" />
-      <File FileName="Assets/Scripts/BattleMode/BattleSystem2.cs" />
-      <File FileName="Assets/Scripts/BattleMode/BattleSystem3.cs" />
-      <File FileName="Assets/Scripts/Interaction/random.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/BattleMode/PlayAgain.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/BattleMode/BattleSystem1.cs" Line="51" Column="45" />
+      <File FileName="Assets/Scripts/BattleMode/BattleSystem2.cs" Line="104" Column="11" />
+      <File FileName="Assets/Scripts/BattleMode/BattleSystem3.cs" Line="68" Column="62" />
+      <File FileName="Assets/Scripts/Interaction/random.cs" Line="22" Column="1" />
+      <File FileName="Assets/Scripts/BattleMode/Character.cs" Line="30" Column="53" />
+      <File FileName="Assets/Scripts/BattleMode/BattleHUD.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/BattleMode/BattleState.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Interaction/BatlleSceneInteract.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Interaction/BattleSceneInteract2.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Interaction/BattleSceneInteract3.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Player/MouseLook.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Unity">
+          <Node name="Unity" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="BattleMode" expanded="True" />
-                <Node name="Interaction" expanded="True">
-                  <Node name="random.cs" selected="True" />
+                <Node name="BattleMode" expanded="True">
+                  <Node name="BattleSystem2.cs" selected="True" />
                 </Node>
+                <Node name="Interaction" expanded="True" />
                 <Node name="Player" expanded="True" />
               </Node>
             </Node>
           </Node>
         </State>
       </Pad>
-      <Pad Id="MonoDevelop.UnitTesting.TestPad">
-        <State name="__root__">
-          <Node name="Unity" selected="True" />
-        </State>
-      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="e67ffe76-0ba3-463c-935a-97b691aed7d0" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
 </Properties>

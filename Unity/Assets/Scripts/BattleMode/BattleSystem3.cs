@@ -32,8 +32,8 @@ public class BattleSystem3 : MonoBehaviour
     public void Start()
 	{
         state = BattleState.START;
+		StartCoroutine(SetupBattle());
 		button.gameObject.SetActive(false);
-        StartCoroutine(SetupBattle());
     }
 
     public IEnumerator SetupBattle()
